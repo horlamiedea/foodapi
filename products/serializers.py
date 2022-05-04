@@ -10,6 +10,9 @@ class PostCreateUpload(serializers.ModelSerializer):
         model = Identified
         fields = ['image']
 
+    def create(self, validated_data):
+        return Identified.objects.create(**validated_data)
+
     def clean_image(self, value):
         initial_path = value.path
         new_path = settings.MEDIA_ROOT + value.name
