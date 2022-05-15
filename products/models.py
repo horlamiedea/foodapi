@@ -7,6 +7,7 @@ from sqlalchemy import null
 class Identified(models.Model):
     # name = models.CharField(max_length=30)
     image = models.ImageField(upload_to='media', blank=True, null=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.image
+        return self.timestamp
