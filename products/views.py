@@ -26,8 +26,8 @@ class CreateImageInfo(APIView):
             file.save()
             image = file.data['image']
             resp = requests.post(
-                url, files={'image': open(image, 'r')}, headers=headers)
-            return Response(resp.data, status=status.HTTP_201_CREATED)
+                url, files={'image': open(image, 'rb')}, headers=headers)
+            return Response(resp, status=status.HTTP_201_CREATED)
 
     # def post(self, request, *args, **kwargs):
     #     headers = {'Authorization': 'Bearer ' +

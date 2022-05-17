@@ -25,7 +25,7 @@ SECRET_KEY = 'rvn_*zwcqc!86f@#p(u%6ze685*adj!lyf%6*jrgq_@e==pu_4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -121,5 +121,10 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
-MEDIA_URL = "/images/"
+MEDIA_URL = os.path.join(BASE_DIR, "media/")
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# "http://127.0.0.1:8000/images/"
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+m = '/home/olamide/Downloads/foodapi'
